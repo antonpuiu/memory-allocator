@@ -1,0 +1,24 @@
+# Computer Programming - Memory Allocation Simulation
+# (C) 2008 Stefan Bucur
+
+# This this is the testing makefile
+
+EVALUATOR = ./eval.sh
+TESTS_DIR = ./_tests
+
+RM = rm -f
+
+.PHONY: test test-bonus clean
+
+test: clean
+	@$(EVALUATOR)
+
+test-bonus: clean
+	@$(EVALUATOR) bonus
+	
+clean:
+	@echo "Cleaning up..."
+	$(RM) $(TESTS_DIR)/*.out
+	$(RM) $(TESTS_DIR)/*.out.ref
+	$(RM) $(TESTS_DIR)/random*
+	@echo
